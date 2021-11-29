@@ -1,4 +1,4 @@
-const Users = require('../../models/users');
+const Recipes = require('../../models/recipes');
 
 module.exports = async (recipe, user) => {
     const { _id } = user;
@@ -6,5 +6,5 @@ module.exports = async (recipe, user) => {
         ...recipe,
         userId: _id,
     };
-    return Users.registerUser(newRecipe);
+    return Recipes.registerRecipe(newRecipe);
 };

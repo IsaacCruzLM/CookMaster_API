@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
   const users = await Users.getUsers();
   const emails = users.map((user) => user.email);
 
-  if (emails.includes(email)) return res.status(400).send(EMAIL_INVALID);
+  if (emails.includes(email)) return res.status(409).send(EMAIL_INVALID);
 
   next();
 };

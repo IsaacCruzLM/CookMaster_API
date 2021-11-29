@@ -4,4 +4,6 @@ const root = express.Router({ mergeParams: true });
 
 root.use('/users', require('./users/router'));
 
+root.post('/login', require('./login'));
+
 module.exports = root;

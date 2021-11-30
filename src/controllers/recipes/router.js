@@ -6,7 +6,7 @@ const router = express.Router({ mergeParams: true });
 router.get('/', require('./getAllRecipes'));
 router.get('/:id', require('./getRecipeById'));
 router.post('/', auth, require('./registerRecipe'));
-// router.put('/:id', quantityValidation, nameValidation, require('./updateProduct'));
+router.put('/:id', auth, require('./updateRecipe'));
 // router.delete('/:id', require('./removeProduct'));
 
 module.exports = router;

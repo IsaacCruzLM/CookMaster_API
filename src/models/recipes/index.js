@@ -1,9 +1,11 @@
 const registerRecipeFunction = require('./registerRecipe');
 const getAllRecipesFunction = require('./getAllRecipes');
-const gerRecipeByIdFunction = require('./gerRecipeById');
+const getRecipeByIdFunction = require('./getRecipeById');
+const updateRecipeFunction = require('./updateRecipe');
 
 module.exports = {
     registerRecipe: (recipe) => registerRecipeFunction(recipe),
     getAllRecipes: () => getAllRecipesFunction(),
-    gerRecipeById: (id) => gerRecipeByIdFunction(id),
+    getRecipeById: (id) => getRecipeByIdFunction(id),
+    updateRecipe: (recipe) => updateRecipeFunction(recipe),
 };

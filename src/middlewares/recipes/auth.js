@@ -1,7 +1,7 @@
 // Algoritimo retirado do repositóris das aulas ao vivo, live lecture 27.1
 const authService = require('../../services/auth');
 
-const WITHOUT_JWT = { message: 'user not logged in' };
+const WITHOUT_JWT = { message: 'missing auth token' };
 const INVALID_JWT = { message: 'jwt malformed' };
 
 module.exports = (req, res, next) => {

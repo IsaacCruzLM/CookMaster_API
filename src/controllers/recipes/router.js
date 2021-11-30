@@ -7,6 +7,6 @@ router.get('/', require('./getAllRecipes'));
 router.get('/:id', require('./getRecipeById'));
 router.post('/', auth, require('./registerRecipe'));
 router.put('/:id', auth, require('./updateRecipe'));
-// router.delete('/:id', require('./removeProduct'));
+router.delete('/:id', auth, require('./deleteRecipe'));
 
 module.exports = router;

@@ -16,8 +16,8 @@ module.exports = async (req, res, next) => {
         && role !== 'admin') return res.status(403).send(INVALID_PERMISSION);
     
     const updatedRecipe = {
-        ...recipe,
-        image: `localhost:3000/src/uploads/${id}.jpeg`,
+      ...recipe,
+      image: `localhost:3000/src/uploads/${id}.jpeg`,
     };
 
     await Services.updateRecipe(updatedRecipe);

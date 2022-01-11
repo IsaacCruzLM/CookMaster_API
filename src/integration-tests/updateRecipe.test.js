@@ -18,22 +18,6 @@ describe('Testa rota "/recipes/:id" - PUT', () => {
   before(async () => {
     connectionMock = await getConnection();
     sinon.stub(MongoClient, 'connect').resolves(connectionMock);
-
-    const users = connectionMock.db('Cookmaster').collection('users');
-
-    await users.insertOne({
-      name: 'Teste Admin',
-      email: 'testAdmin@email.com',
-      password: 'TestAdmin123',
-      role: 'admin',
-    });
-
-    await users.insertOne({
-      name: 'Teste Admin 2',
-      email: 'testAdmin2@email.com',
-      password: 'TestAdmin123',
-      role: 'user',
-    });
   });
 
   after(() => {
@@ -181,6 +165,7 @@ describe('Testa rota "/recipes/:id" - PUT', () => {
   
   describe('Quando a atualização da receita, é realizado com sucesso', () => {
     let response;
+
     before(async () => {
       const token = await chai.request(server)
         .post('/login')
@@ -194,9 +179,9 @@ describe('Testa rota "/recipes/:id" - PUT', () => {
         .put(`/recipes/${recipeIDTest}`)
         .set('authorization', token)
         .send({
-          name: "Receita Teste",
-          ingredients: "Ingrediente Teste",
-          preparation: "Preparação Teste"
+          name: "Receita Teste Editada",
+          ingredients: "Ingrediente Teste Editado",
+          preparation: "Preparação Teste Editado"
         });
     });
 
@@ -214,17 +199,17 @@ describe('Testa rota "/recipes/:id" - PUT', () => {
 
     it('a reposta da requisição tem uma key "name" igual a inserida na requisição', () => {
       const name = response.body.name;
-      expect(name).to.be.equals('Receita Teste');
+      expect(name).to.be.equals('Receita Teste Editada');
     });
 
     it('a reposta da requisição tem uma key "ingredients" igual a inserida na requisição', () => {
       const ingredients = response.body.ingredients;
-      expect(ingredients).to.be.equals('Ingrediente Teste');
+      expect(ingredients).to.be.equals('Ingrediente Teste Editado');
     });
     
     it('a reposta da requisição tem uma key "preparation" igual a inserida na requisição', () => {
       const preparation = response.body.preparation;
-      expect(preparation).to.be.equals('Preparação Teste');
+      expect(preparation).to.be.equals('Preparação Teste Editado');
     });
     
   });

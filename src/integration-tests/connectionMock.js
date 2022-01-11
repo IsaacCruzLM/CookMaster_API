@@ -1,4 +1,3 @@
-// Código retirado do repositproio de aulas - live lecture 27.3
 const { MongoClient } = require('mongodb');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 

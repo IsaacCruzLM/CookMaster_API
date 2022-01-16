@@ -14,7 +14,6 @@ Tabela de conteúdos
    * [Funcionalidades](#%EF%B8%8F-funcionalidades)
    * [Como executar o projeto](#-como-executar-o-projeto)
      * [Pré-requisitos](#pré-requisitos)
-     * [Configurando Variáveis de Ambiente](#configurando-variáveis-de-ambiente)
      * [Rodando o Servidor](#-rodando-o-servidor)
      * [Rodando os Testes](#-rodando-os-testes)
    * [Tecnologias](#-tecnologias)
